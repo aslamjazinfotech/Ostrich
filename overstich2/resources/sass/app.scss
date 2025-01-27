@@ -1,0 +1,40 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+//bootrap font size
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+// Merge the custom font sizes with Bootstrap's font-size utilities
+$utilities: map-merge(
+  $utilities,
+  (
+    "font-size": map-merge(
+      map-get($utilities, "font-size"),
+      (
+        responsive: true,
+        values: $font-sizes
+      )
+    )
+  )
+);
+
+@import "bootstrap/scss/utilities/api";
+
+@import '../css/app.css';
+@import '/node_modules/bootstrap-icons/font/bootstrap-icons.min.css';
+
+// DataTables
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import "datatables.net-bs5/css/dataTables.bootstrap5.min.css";
+@import "datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css";
+@import 'datatables.net-select-bs5/css/select.bootstrap5.css';
+
+//Sweet Alert
+@import '../../node_modules/sweetalert2/dist/sweetalert2.min.css';
+@import '../../node_modules/@splidejs/splide/dist/css/splide.min.css'
